@@ -389,13 +389,13 @@ except:
 
 
 
-
 if(len(instruction)>0 and not main):
     for i in instruction:
         if(len(i)==0):
             continue
         words = i.split()
-        counter_label += 1
+        if(words[0]!='var'):
+            counter_label += 1
         if words[0][-1] == ':':
             b = decimal_to_binary(counter_label-1)
             b = "0"*(8-len(b)) + b
